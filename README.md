@@ -73,17 +73,32 @@ python scripts/generate_report.py --open
 ### Option B: Kiro Steering + Hooks
 
 ```bash
-# Copy steering file
+# Copy steering file (AI behavior rules)
 cp steering/keepwell.md /your-project/.kiro/steering/
 
 # Copy hooks for auto-reminders
 cp hooks/*.json /your-project/.kiro/hooks/
 ```
 
+### Option B2: Claude Code (CLAUDE.md)
+
+Add this to your project's `CLAUDE.md`:
+
+```markdown
+## Well-Being
+
+You have access to the KeepWell AI MCP server. Use it to:
+- Call `keepwell_nudge` when the user has been working for a while
+- Call `keepwell_checkin` when the user mentions stress or fatigue
+- Respect quiet hours: if the time is past the user's configured sleep_time, suggest winding down
+- If emotional scores are low for 3+ days, surface the EAP recommendation
+```
+
 ### Option C: MCP Server (Any AI IDE)
 
-Add to your IDE's MCP config:
+Works with **Kiro**, **Claude Code**, **Cursor**, **Windsurf**, **Codex**, and any MCP-compatible client.
 
+**Kiro** — add to `.kiro/settings/mcp.json`:
 ```json
 {
   "mcpServers": {
@@ -94,6 +109,44 @@ Add to your IDE's MCP config:
   }
 }
 ```
+
+**Claude Code** — add to `.claude/settings.json` or project `CLAUDE.md`:
+```json
+{
+  "mcpServers": {
+    "keepwell-ai": {
+      "command": "python3",
+      "args": ["/absolute/path/to/keepwell-ai/server/keepwell_server.py"]
+    }
+  }
+}
+```
+
+**Cursor** — add to `.cursor/mcp.json`:
+```json
+{
+  "mcpServers": {
+    "keepwell-ai": {
+      "command": "python3",
+      "args": ["/absolute/path/to/keepwell-ai/server/keepwell_server.py"]
+    }
+  }
+}
+```
+
+**Codex CLI** — add to your agent instructions or `.codex/config.json`:
+```json
+{
+  "mcpServers": {
+    "keepwell-ai": {
+      "command": "python3",
+      "args": ["/absolute/path/to/keepwell-ai/server/keepwell_server.py"]
+    }
+  }
+}
+```
+
+**Any MCP client** — point to `server/keepwell_server.py` via stdio transport.
 
 ### First Run: Onboarding
 
@@ -283,17 +336,35 @@ KeepWell AI is designed to scale from individual to team to organization:
 
 ## How It's Different
 
-| Feature | Break Reminders (typical) | KeepWell AI |
-|---------|--------------------------|-------------|
-| Dimensions covered | 1 (Physical) | 8 |
-| Scientific backing | None | 10 theories, 44+ citations |
-| Schedule awareness | Fixed timer | Circadian + ultradian |
-| Shift worker support | No | Yes (night shift preset) |
-| Language | English only | EN + 繁中 |
-| Tracking | None | Streaks, history, reports |
-| Mental health safety net | None | EAP gateway |
-| Personalization | On/off | Full config + presets |
-| Works in AI IDEs | No | MCP Server |
+### vs. Break Reminder Extensions (VS Code)
+
+| Feature | Break Reminders | KeepWell AI |
+|---------|----------------|-------------|
+| Dimensions covered | 1 (Physical) | **8** |
+| Scientific backing | None | **10 theories, 44+ citations** |
+| Schedule awareness | Fixed timer | **Circadian + ultradian** |
+| Shift worker support | No | **Yes** |
+| Language | English | **EN + 繁中** |
+| Tracking | None | **Streaks, history, reports** |
+| Mental health safety net | None | **EAP gateway** |
+| Works in AI IDEs | No | **MCP Server** |
+
+### vs. Agent Wellbeing Kit
+
+| Aspect | Agent Wellbeing Kit | KeepWell AI |
+|--------|-------------------|-------------|
+| **Core problem** | "AI output overwhelms me" | "Knowledge workers neglect well-being" |
+| **Approach** | Boundary-setting for agent noise | Proactive wellness intervention |
+| **Theory basis** | Experience-based | **10 behavioral science models** |
+| **Wellness scope** | Sleep/routine only | **8 SAMHSA dimensions** |
+| **EAP integration** | None | **Auto-detect sustained low mood** |
+| **Shift workers** | Not supported | **Night shift preset** |
+| **Protocol** | Standalone scripts + cron | **MCP Server (universal)** |
+| **Multi-language** | English only | **EN + Traditional Chinese** |
+| **Target user** | AI power users | **Any knowledge worker + enterprise** |
+| **Author expertise** | Developer/indie maker | **17-year well-being professional** |
+
+**Key insight:** Agent Wellbeing Kit solves "my AI is too noisy." KeepWell AI solves "I'm neglecting my health while working." Different problems, different audiences. KeepWell AI is designed for enterprise well-being programs (EAP gateway, shift worker support, multi-language) while remaining useful for individuals.
 
 ---
 
