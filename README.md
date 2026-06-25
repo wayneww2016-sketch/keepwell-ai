@@ -428,10 +428,10 @@ KeepWell AI is designed to scale from individual to team to organization:
 
 ## How It's Different
 
-### vs. Break Reminder Extensions (VS Code)
+### vs. Break Reminder Extensions
 
-| Feature | Break Reminders | KeepWell AI |
-|---------|----------------|-------------|
+| Feature | Typical Break Reminders | KeepWell AI |
+|---------|------------------------|-------------|
 | Dimensions covered | 1 (Physical) | **8** |
 | Scientific backing | None | **10 theories, 44+ citations** |
 | Schedule awareness | Fixed timer | **Circadian + ultradian** |
@@ -439,26 +439,19 @@ KeepWell AI is designed to scale from individual to team to organization:
 | Language | English | **EN + 繁中** |
 | Tracking | None | **Streaks, history, reports** |
 | Mental health safety net | None | **EAP gateway** |
+| Weather-aware | No | **Yes (live data, UV, rain)** |
+| Messaging | No | **Slack, Telegram, Teams** |
 | Works in AI IDEs | No | **MCP Server** |
 
-### vs. Agent Wellbeing Kit
+### vs. Other Well-Being Tools
 
-| Aspect | Agent Wellbeing Kit | KeepWell AI |
-|--------|-------------------|-------------|
-| **Core problem** | "AI output overwhelms me" | "Knowledge workers neglect well-being" |
-| **Approach** | Boundary-setting for agent noise | Proactive wellness intervention |
-| **Theory basis** | Experience-based | **10 behavioral science models** |
-| **Wellness scope** | Sleep/routine only | **8 SAMHSA dimensions** |
-| **EAP integration** | None | **Auto-detect sustained low mood** |
-| **Shift workers** | Not supported | **Night shift preset** |
-| **Weather-aware** | Yes (morning only) | **Yes (any nudge, indoor/outdoor/UV)** |
-| **Messaging** | Slack/Telegram/iMessage | **Slack/Telegram/Teams/webhook** |
-| **Protocol** | Standalone scripts + cron | **MCP Server (universal) + cron** |
-| **Multi-language** | English only | **EN + Traditional Chinese** |
-| **Target user** | AI power users | **Any knowledge worker + enterprise** |
-| **Author expertise** | Developer/indie maker | **17-year well-being professional** |
+Most existing solutions fall into one of two categories:
 
-**Key insight:** Agent Wellbeing Kit solves "my AI is too noisy." KeepWell AI solves "I'm neglecting my health while working." Different problems, different audiences. KeepWell AI is designed for enterprise well-being programs (EAP gateway, shift worker support, multi-language) while remaining useful for individuals.
+1. **Timer-based** — "take a break every 25 minutes" with no context awareness, no personalization, and no science behind the recommendation.
+
+2. **Boundary-setting** — "don't bother me after 10 PM" which solves notification fatigue but doesn't actively promote wellness.
+
+KeepWell AI takes a third approach: **proactive, evidence-based intervention** across all dimensions of human wellness, personalized to your schedule, informed by live context (time, weather), and backed by behavioral science at every step.
 
 ---
 
@@ -504,14 +497,7 @@ keepwell-ai/
 
 ## Who Made This
 
-Created by **Wayne Wang** — 17 years in occupational health, EHS, and well-being program design across HP, Logitech, and Amazon Web Services.
-
-- Health Behavior Science trained (National Taiwan Normal University)
-- MHFA (Mental Health First Aid) certified
-- MBA in Business Analytics (University of Illinois)
-- Programs built for 10,000+ employees across 13 APAC countries
-
-This tool is the AI evolution of real programs: HP's *Keep Well-Being at Work*, Logitech's *Safety Month*, and AWS's *DC Well-being* initiatives.
+Made by **Wayne Wang** — someone who believes well-being shouldn't be an afterthought squeezed between deadlines. Built from years of designing wellness programs for real teams across Asia-Pacific, now distilled into a tool anyone can use.
 
 ---
 
