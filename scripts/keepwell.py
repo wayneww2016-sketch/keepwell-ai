@@ -19,9 +19,13 @@ from datetime import datetime
 from pathlib import Path
 
 
-def load_tips():
+def load_tips(lang="en"):
     """Load the wellbeing tips database."""
-    data_path = Path(__file__).parent.parent / "data" / "wellbeing-tips.json"
+    if lang == "zh" or lang == "zh-TW":
+        filename = "wellbeing-tips-zh.json"
+    else:
+        filename = "wellbeing-tips.json"
+    data_path = Path(__file__).parent.parent / "data" / filename
     with open(data_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -206,9 +210,14 @@ Examples:
         "--no-time", action="store_true",
         help="Disable time-aware filtering",
     )
+    parser.add_argument(
+        "--lang", choices=["en", "zh", "zh-TW"],
+        default="en",
+        help="Language for tips (en or zh/zh-TW for Traditional Chinese)",
+    )
 
     args = parser.parse_args()
-    data = load_tips()
+    data = load_tips(args.lang)
 
     # Late night override
     period = get_time_period()

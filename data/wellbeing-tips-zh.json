@@ -1,0 +1,318 @@
+{
+  "version": "1.0.0",
+  "language": "zh-TW",
+  "dimensions": {
+    "physical": {
+      "icon": "🏃",
+      "label": "身體",
+      "tips": [
+        {
+          "action": "起來做 10 次肩膀繞圈，前後各 5 次。",
+          "science": "久坐超過 8 小時，每多一小時心血管風險增加 14%（Katzmarzyk et al., 2009）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "現在喝一整杯水。",
+          "science": "僅 1-2% 的脫水就會影響認知表現和情緒（Ganio et al., 2011）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "做 20 秒手腕繞圈，正反方向都做。",
+          "science": "20-30 秒的微休息能減少電腦使用者的肌肉骨骼不適（McLean et al., 2001）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "走到你辦公室最遠的飲水機或廁所。",
+          "science": "一天中零碎的活動對心臟代謝健康的益處等同於結構化運動（Stamatakis et al., 2019）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "檢查姿勢：耳朵在肩膀上方，肩膀在臀部上方。",
+          "science": "頭部前傾每增加一英寸，頸椎負荷增加 4.5 公斤（Hansraj, 2014）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "今天下午 2 點後不再喝含咖啡因的飲料。",
+          "science": "咖啡因半衰期 6 小時；下午攝取會減少 20% 深度睡眠（Drake et al., 2013）。",
+          "time": "afternoon",
+          "intensity": "medium"
+        },
+        {
+          "action": "做 5 次腹式深呼吸：吸 4 拍、停 4 拍、吐 6 拍。",
+          "science": "延長吐氣啟動副交感神經系統，30 秒內降低心率（Gerritsen & Band, 2018）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "弓箭步伸展髖屈肌，每邊 30 秒。",
+          "science": "久坐會縮短腰大肌，導致辦公族下背痛（Kendall et al., 2005）。",
+          "time": "any",
+          "intensity": "low"
+        }
+      ]
+    },
+    "emotional": {
+      "icon": "💭",
+      "label": "情緒",
+      "tips": [
+        {
+          "action": "說出你現在的一個情緒。只要說出名字就好。",
+          "science": "情緒標記（affect labeling）能降低杏仁核反應達 43%（Lieberman et al., 2007）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "寫下今天一件做得好的事，不管多小。",
+          "science": "「三件好事」練習能提升快樂感並降低憂鬱持續 6 個月（Seligman et al., 2005）。",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "如果卡關了，對自己說：「這很難，沒關係。」",
+          "science": "困難時的自我慈悲能降低皮質醇並提升問題解決持久力（Neff et al., 2007）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "閉上眼 30 秒，注意周圍 3 個聲音。",
+          "science": "對當下感官的正念注意能減少反芻思考（Jain et al., 2007）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "為你的壓力打分 1-10。超過 7 分的話，先走 5 分鐘再繼續。",
+          "science": "自我監控壓力水平能改善情緒調節和早期介入（Tugade & Fredrickson, 2004）。",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "傳個訊息給你信任的人：「嘿，你今天過得怎樣？」",
+          "science": "尋求社會支持本身就能降低感知壓力，不需等到支持到來（Cohen & Wills, 1985）。",
+          "time": "any",
+          "intensity": "medium"
+        }
+      ]
+    },
+    "occupational": {
+      "icon": "💼",
+      "label": "職涯",
+      "tips": [
+        {
+          "action": "今天最重要的一件事是什麼？寫在便利貼上。",
+          "science": "執行意圖（if-then planning）能將目標達成率提升 2-3 倍（Gollwitzer, 1999）。",
+          "time": "morning",
+          "intensity": "low"
+        },
+        {
+          "action": "設定今天的結束時間，現在就放進行事曆。",
+          "science": "下班後的心理脫離能預測較低的耗竭感和較高的幸福感（Sonnentag & Fritz, 2007）。",
+          "time": "morning",
+          "intensity": "medium"
+        },
+        {
+          "action": "找出一件這週可以委派或直接不做的任務。",
+          "science": "工作要求持續超過資源時，會透過健康損害路徑導致倦怠（Bakker & Demerouti, 2007）。",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "問自己：我做這件事是因為它重要，還是因為它緊急？",
+          "science": "人們系統性地優先處理緊急事項而非重要事項——這是「單純緊迫效應」（Zhu et al., 2018）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "封鎖 25 分鐘專注工作，不看 Slack 和 Email。現在開始。",
+          "science": "每次被打斷需要 23 分鐘才能重新聚焦（Mark et al., 2008）。",
+          "time": "morning",
+          "intensity": "medium"
+        },
+        {
+          "action": "這週拒絕一個不需要你出席的會議。",
+          "science": "會議過載是時間貧乏和自主感降低的主要驅動因素（Rogelberg et al., 2007）。",
+          "time": "any",
+          "intensity": "high"
+        }
+      ]
+    },
+    "social": {
+      "icon": "🤝",
+      "label": "社交",
+      "tips": [
+        {
+          "action": "今天傳 2 句感謝的話給一位同事。",
+          "science": "表達感恩能強化社交連結，提升給予者和接收者的幸福感（Algoe et al., 2008）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "午餐跟人一起吃（實體或視訊），不要一個人在桌上吃。",
+          "science": "社交用餐能增加歸屬感和合作意願（Dunbar, 2017）。",
+          "time": "midday",
+          "intensity": "medium"
+        },
+        {
+          "action": "聯絡一個兩週以上沒說話的人。",
+          "science": "弱連結（不常聯繫的人）比強連結提供更多新資訊和觀點（Granovetter, 1973）。",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "下次開會時，真心問一個人週末過得如何。",
+          "science": "自我揭露的互惠性能建立人際信任和親密感（Aron et al., 1997）。",
+          "time": "morning",
+          "intensity": "low"
+        },
+        {
+          "action": "如果在遠端工作，下一通電話開鏡頭。",
+          "science": "視覺線索（表情、手勢）佔溝通的 55%，能減少誤解（Mehrabian, 1971）。",
+          "time": "any",
+          "intensity": "low"
+        }
+      ]
+    },
+    "intellectual": {
+      "icon": "📖",
+      "label": "智能",
+      "tips": [
+        {
+          "action": "花 5 分鐘讀一篇跟現在工作完全無關的東西。",
+          "science": "跨領域接觸能透過類比轉移提升創造性問題解決（Gentner et al., 2003）。",
+          "time": "afternoon",
+          "intensity": "low"
+        },
+        {
+          "action": "寫下今天學到的一件事，再小都好。",
+          "science": "提取練習（從記憶中寫出）比重讀強化長期記憶 50% 以上（Roediger & Butler, 2011）。",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "把這週學到的一個概念教給別人（或大聲解釋出來）。",
+          "science": "費曼效應：教別人能比自己讀更深入理解材料（Chase et al., 2009）。",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "通勤或走路時聽一集 podcast 或 TED Talk。",
+          "science": "在例行活動中進行聽覺學習，能將「死時間」轉換為成長時間（Mayer, 2009）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "今天試著用一個從沒用過的工具或方法來解決問題。",
+          "science": "在不熟悉領域的刻意練習能建立認知靈活性和適應性專業（Ericsson et al., 1993）。",
+          "time": "any",
+          "intensity": "high"
+        }
+      ]
+    },
+    "environmental": {
+      "icon": "🌿",
+      "label": "環境",
+      "tips": [
+        {
+          "action": "看窗外 20 秒，注視你能看到最遠的那一點。",
+          "science": "遠距注視能放鬆睫狀肌，減少數位眼疲勞（Sheppard & Wolffsohn, 2018）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "開窗或走出去呼吸 60 秒新鮮空氣。",
+          "science": "室內 CO2 超過 1000 ppm 會降低認知功能 15-50%（Allen et al., 2016）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "清掉桌上一個不需要的東西。",
+          "science": "視覺雜亂會競爭注意力並降低工作記憶容量（McMains & Kastner, 2011）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "調整螢幕亮度，讓它跟周圍環境光一致。",
+          "science": "螢幕與環境對比超過 3:1 會增加眼疲勞和頭痛頻率（Osterhaus et al., 2015）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "如果工作區附近沒有植物，考慮這週買一盆。",
+          "science": "室內植物能降低壓力生物標記（皮質醇）12%，提升生產力 15%（Nieuwenhuis et al., 2014）。",
+          "time": "any",
+          "intensity": "medium"
+        }
+      ]
+    },
+    "financial": {
+      "icon": "💰",
+      "label": "財務",
+      "tips": [
+        {
+          "action": "檢查：有沒有一個你在付費但 30 天沒用的訂閱？",
+          "science": "沉沒成本謬誤讓人持續支付未使用的服務；定期審查可回收 10-15% 月支出（Arkes & Blumer, 1985）。",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "設定一筆自動存款，即使每月只有 300 元也好。",
+          "science": "自動化消除了意志力的需求；預承諾機制能提升儲蓄率 81%（Thaler & Benartzi, 2004）。",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "下次想買東西前，等 24 小時。明天還想要就買。",
+          "science": "「冷卻期」能減少 35% 衝動消費，讓前額葉皮層覆蓋情緒消費（Hoch & Loewenstein, 1991）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "花 5 分鐘看一下公司的福利頁面。你可能漏掉了一些權益。",
+          "science": "大公司的福利使用不足率平均 30-40%；認知是主要障礙（SHRM, 2022）。",
+          "time": "any",
+          "intensity": "medium"
+        }
+      ]
+    },
+    "spiritual": {
+      "icon": "✨",
+      "label": "心靈",
+      "tips": [
+        {
+          "action": "說出今天做的一件符合你個人價值觀的事。",
+          "science": "價值肯定練習能緩衝壓力反應並改善威脅情境下的表現（Cohen & Sherman, 2014）。",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "寫下 3 件你感恩的事，越具體越好。",
+          "science": "感恩日誌能在 10 週內提升主觀幸福感 25%（Emmons & McCullough, 2003）。",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "問自己：5 年後這件事重要嗎？拉遠視角 10 秒鐘。",
+          "science": "時間距離感能降低當下壓力源的情緒強度（Bruehlman-Senecal & Ayduk, 2015）。",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "今天做一件小善事——幫人扶門、誇獎陌生人、請人喝咖啡。",
+          "science": "利他行為和利社會消費比自我消費更能提升快樂感（Dunn et al., 2008）。",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "安靜 2 分鐘。不看手機、不看螢幕、不接收任何輸入。只是存在。",
+          "science": "2 分鐘安靜能增加 BDNF（腦源性神經營養因子）並促進海馬迴神經新生（Kirste et al., 2015）。",
+          "time": "any",
+          "intensity": "low"
+        }
+      ]
+    }
+  }
+}
