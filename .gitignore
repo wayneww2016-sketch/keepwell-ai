@@ -8,3 +8,6 @@ dist/
 build/
 .DS_Store
 Thumbs.db
+history/
+reports/
+keepwell.config.json
