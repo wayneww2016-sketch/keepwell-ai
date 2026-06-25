@@ -1,0 +1,32 @@
+{
+  "_comment": "KeepWell AI personal configuration. Copy this file to your project and customize.",
+
+  "profile": {
+    "name": "",
+    "language": "en",
+    "timezone": "auto"
+  },
+
+  "schedule": {
+    "wake_time": "07:00",
+    "sleep_time": "23:00",
+    "work_start": "09:00",
+    "work_end": "18:00",
+    "lunch_start": "12:00",
+    "lunch_end": "13:00"
+  },
+
+  "preferences": {
+    "break_interval_minutes": 90,
+    "priority_dimensions": ["physical", "emotional", "occupational"],
+    "excluded_dimensions": [],
+    "nudge_intensity": "gentle",
+    "max_nudges_per_day": 8
+  },
+
+  "shift_work": {
+    "enabled": false,
+    "shift_type": "day",
+    "rotation_pattern": null
+  }
+}

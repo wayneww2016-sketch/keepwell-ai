@@ -79,18 +79,59 @@ See [SCIENCE.md](./SCIENCE.md) for the full theoretical framework. Key models:
 
 ## Configuration
 
-Edit `steering/keepwell.md` to customize:
+### Quick Setup
 
-```yaml
-# Your preferences
-wake_time: "07:00"
-sleep_time: "23:00"
-work_start: "09:00"
-work_end: "18:00"
-break_interval_minutes: 90
-priority_dimensions: [physical, emotional, occupational]
-language: "en"  # or "zh-TW" for Traditional Chinese
+```bash
+# Generate a config file in your project
+python scripts/keepwell.py --init
 ```
+
+This creates `keepwell.config.json` in your current directory. Edit it:
+
+```json
+{
+  "schedule": {
+    "wake_time": "07:00",
+    "sleep_time": "23:00",
+    "work_start": "09:00",
+    "work_end": "18:00",
+    "lunch_start": "12:00",
+    "lunch_end": "13:00"
+  },
+  "preferences": {
+    "break_interval_minutes": 90,
+    "priority_dimensions": ["physical", "emotional", "occupational"],
+    "excluded_dimensions": [],
+    "nudge_intensity": "gentle",
+    "max_nudges_per_day": 8
+  },
+  "profile": {
+    "language": "en"
+  }
+}
+```
+
+### Presets
+
+Don't want to configure manually? Use a built-in preset:
+
+```bash
+python scripts/keepwell.py --preset early-bird       # 5:30 AM riser
+python scripts/keepwell.py --preset night-owl        # Late worker
+python scripts/keepwell.py --preset shift-worker-night  # Night shift (DC, factory, healthcare)
+python scripts/keepwell.py --preset remote-flexible  # WFH flexible hours
+```
+
+| Preset | Wake | Work | Sleep | Best For |
+|--------|------|------|-------|----------|
+| early-bird | 05:30 | 07:00-16:00 | 22:00 | Morning people |
+| night-owl | 09:00 | 10:30-19:30 | 01:00 | Late starters |
+| shift-worker-night | 18:00 | 20:00-06:00 | 09:00 | Night shift, DC ops |
+| remote-flexible | 08:00 | 09:00-18:00 | 23:30 | WFH with flex |
+
+### Shift Worker Support
+
+KeepWell AI handles inverted schedules correctly. A night-shift worker at 2 PM will get "wind down and sleep" nudges, not "stay focused" ones. This matters for data center operators, factory workers, and healthcare staff.
 
 ---
 

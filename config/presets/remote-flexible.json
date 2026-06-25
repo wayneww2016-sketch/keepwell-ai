@@ -1,0 +1,16 @@
+{
+  "_comment": "Preset: Remote Flexible — No fixed schedule, works in bursts.",
+  "schedule": {
+    "wake_time": "08:00",
+    "sleep_time": "23:30",
+    "work_start": "09:00",
+    "work_end": "18:00",
+    "lunch_start": "12:30",
+    "lunch_end": "13:30"
+  },
+  "preferences": {
+    "break_interval_minutes": 75,
+    "priority_dimensions": ["social", "occupational", "physical"],
+    "nudge_intensity": "moderate"
+  }
+}

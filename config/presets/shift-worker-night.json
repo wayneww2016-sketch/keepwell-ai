@@ -1,0 +1,21 @@
+{
+  "_comment": "Preset: Night Shift Worker — Data center, factory, healthcare night shift.",
+  "schedule": {
+    "wake_time": "18:00",
+    "sleep_time": "09:00",
+    "work_start": "20:00",
+    "work_end": "06:00",
+    "lunch_start": "01:00",
+    "lunch_end": "02:00"
+  },
+  "preferences": {
+    "break_interval_minutes": 60,
+    "priority_dimensions": ["physical", "emotional", "environmental"],
+    "nudge_intensity": "moderate"
+  },
+  "shift_work": {
+    "enabled": true,
+    "shift_type": "night",
+    "rotation_pattern": "4on-4off"
+  }
+}
