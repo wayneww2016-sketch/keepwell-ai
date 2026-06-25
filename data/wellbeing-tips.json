@@ -1,0 +1,317 @@
+{
+  "version": "1.0.0",
+  "dimensions": {
+    "physical": {
+      "icon": "🏃",
+      "color": "#76b900",
+      "tips": [
+        {
+          "action": "Stand up and do 10 shoulder rolls, 5 each direction.",
+          "science": "Prolonged sitting increases cardiovascular risk by 14% per hour beyond 8 hours (Katzmarzyk et al., 2009).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Drink a full glass of water right now.",
+          "science": "Even 1-2% dehydration impairs cognitive performance and mood (Ganio et al., 2011).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Do 20 seconds of wrist circles — both directions.",
+          "science": "Microbreaks of 20-30 seconds reduce musculoskeletal discomfort in computer users (McLean et al., 2001).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Walk to the farthest restroom or water station in your building.",
+          "science": "Incidental physical activity throughout the day is as beneficial as structured exercise for cardiometabolic health (Stamatakis et al., 2019).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Check your posture: ears over shoulders, shoulders over hips.",
+          "science": "Forward head posture increases cervical spine load by 4.5 kg per inch of protrusion (Hansraj, 2014).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Set a 'no caffeine after 2 PM' rule for today.",
+          "science": "Caffeine has a 6-hour half-life; afternoon consumption reduces deep sleep by 20% (Drake et al., 2013).",
+          "time": "afternoon",
+          "intensity": "medium"
+        },
+        {
+          "action": "Do 5 deep belly breaths: inhale 4 counts, hold 4, exhale 6.",
+          "science": "Extended exhale activates parasympathetic nervous system, reducing heart rate within 30 seconds (Gerritsen & Band, 2018).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Stretch your hip flexors — 30 seconds each side, lunge position.",
+          "science": "Seated hip flexion shortens the psoas, contributing to lower back pain in desk workers (Kendall et al., 2005).",
+          "time": "any",
+          "intensity": "low"
+        }
+      ]
+    },
+    "emotional": {
+      "icon": "💭",
+      "color": "#5b9bd5",
+      "tips": [
+        {
+          "action": "Name one emotion you're feeling right now. Just name it.",
+          "science": "Affect labeling reduces amygdala reactivity by up to 43% (Lieberman et al., 2007).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Write down one thing that went well today, no matter how small.",
+          "science": "The 'Three Good Things' exercise increases happiness and decreases depression for 6 months (Seligman et al., 2005).",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "If you're stuck on a problem, say out loud: 'This is hard, and that's okay.'",
+          "science": "Self-compassion during difficulty reduces cortisol and increases problem-solving persistence (Neff et al., 2007).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Close your eyes for 30 seconds and notice 3 sounds around you.",
+          "science": "Mindful attention to present-moment sensory input reduces rumination (Jain et al., 2007).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Rate your stress 1-10. If above 7, take a 5-minute walk before continuing.",
+          "science": "Self-monitoring of stress levels improves emotional regulation and early intervention (Tugade & Fredrickson, 2004).",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "Text or message someone you trust: 'Hey, how's your day going?'",
+          "science": "Social support seeking reduces perceived stress even before the support is received (Cohen & Wills, 1985).",
+          "time": "any",
+          "intensity": "medium"
+        }
+      ]
+    },
+    "occupational": {
+      "icon": "💼",
+      "color": "#8ecb4a",
+      "tips": [
+        {
+          "action": "What's the ONE thing that matters most today? Write it on a sticky note.",
+          "science": "Implementation intentions ('if-then' planning) increase goal attainment by 2-3x (Gollwitzer, 1999).",
+          "time": "morning",
+          "intensity": "low"
+        },
+        {
+          "action": "Set a hard stop time for today. Put it in your calendar now.",
+          "science": "Psychological detachment from work during off-hours predicts lower exhaustion and higher well-being (Sonnentag & Fritz, 2007).",
+          "time": "morning",
+          "intensity": "medium"
+        },
+        {
+          "action": "Identify one task you can delegate or drop entirely this week.",
+          "science": "Job demands without corresponding resources lead to burnout via the health impairment pathway (Bakker & Demerouti, 2007).",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "Ask yourself: Am I doing this because it matters, or because it's urgent?",
+          "science": "People systematically over-prioritize urgent tasks over important ones — the 'mere urgency effect' (Zhu et al., 2018).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Block 25 minutes for focused work with no Slack/email. Start now.",
+          "science": "Task switching costs 23 minutes of refocus time per interruption (Mark et al., 2008).",
+          "time": "morning",
+          "intensity": "medium"
+        },
+        {
+          "action": "Say 'no' to one meeting this week that doesn't require your presence.",
+          "science": "Meeting overload is a primary driver of time poverty and reduced autonomy (Rogelberg et al., 2007).",
+          "time": "any",
+          "intensity": "high"
+        }
+      ]
+    },
+    "social": {
+      "icon": "🤝",
+      "color": "#4ab4c4",
+      "tips": [
+        {
+          "action": "Send a 2-sentence appreciation message to a colleague today.",
+          "science": "Expressing gratitude strengthens social bonds and increases both giver and receiver well-being (Algoe et al., 2008).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Eat lunch with someone (in person or virtual) instead of at your desk.",
+          "science": "Social eating increases feelings of belonging and cooperation (Dunbar, 2017).",
+          "time": "midday",
+          "intensity": "medium"
+        },
+        {
+          "action": "Reach out to one person you haven't spoken to in 2+ weeks.",
+          "science": "Weak ties (infrequent contacts) provide novel information and perspective more than strong ties (Granovetter, 1973).",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "In your next meeting, ask someone a genuine question about their weekend.",
+          "science": "Self-disclosure reciprocity builds interpersonal trust and closeness (Aron et al., 1997).",
+          "time": "morning",
+          "intensity": "low"
+        },
+        {
+          "action": "If you're working remotely, turn your camera on for the next call.",
+          "science": "Visual cues (facial expressions, gestures) account for 55% of communication and reduce misunderstanding (Mehrabian, 1971).",
+          "time": "any",
+          "intensity": "low"
+        }
+      ]
+    },
+    "intellectual": {
+      "icon": "📖",
+      "color": "#a78bfa",
+      "tips": [
+        {
+          "action": "Spend 5 minutes reading something completely unrelated to your current task.",
+          "science": "Cross-domain exposure increases creative problem-solving through analogical transfer (Gentner et al., 2003).",
+          "time": "afternoon",
+          "intensity": "low"
+        },
+        {
+          "action": "Write down one thing you learned today, even if it's trivial.",
+          "science": "Retrieval practice (writing from memory) strengthens long-term retention by 50%+ vs. re-reading (Roediger & Butler, 2011).",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "Teach a concept you learned this week to someone else (or explain it out loud).",
+          "science": "The protege effect: teaching material deepens understanding more than studying alone (Chase et al., 2009).",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "Listen to a podcast or TED talk during your next commute or walk.",
+          "science": "Audio learning during routine activities converts 'dead time' into growth time without additional cognitive load (Mayer, 2009).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Try solving today's problem with a tool or method you've never used before.",
+          "science": "Deliberate practice in unfamiliar domains builds cognitive flexibility and adaptive expertise (Ericsson et al., 1993).",
+          "time": "any",
+          "intensity": "high"
+        }
+      ]
+    },
+    "environmental": {
+      "icon": "🌿",
+      "color": "#38bdf8",
+      "tips": [
+        {
+          "action": "Look out a window for 20 seconds. Focus on the farthest point you can see.",
+          "science": "Distance gazing relaxes the ciliary muscle and reduces digital eye strain (Sheppard & Wolffsohn, 2018).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Open a window or step outside for 60 seconds of fresh air.",
+          "science": "Indoor CO2 above 1000 ppm reduces cognitive function by 15-50% (Allen et al., 2016).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Clear one unnecessary item from your desk right now.",
+          "science": "Visual clutter competes for attention and reduces working memory capacity (McMains & Kastner, 2011).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Adjust your screen brightness to match the ambient light in your room.",
+          "science": "Screen-to-environment contrast above 3:1 increases eye fatigue and headache frequency (Osterhaus et al., 2015).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "If you don't have a plant near your workspace, consider getting one this week.",
+          "science": "Indoor plants reduce stress biomarkers (cortisol) by 12% and increase productivity by 15% (Nieuwenhuis et al., 2014).",
+          "time": "any",
+          "intensity": "medium"
+        }
+      ]
+    },
+    "financial": {
+      "icon": "💰",
+      "color": "#fbbf24",
+      "tips": [
+        {
+          "action": "Check: Is there one subscription you're paying for but haven't used in 30 days?",
+          "science": "The sunk cost fallacy keeps people paying for unused services; periodic audits recover 10-15% of monthly spend (Arkes & Blumer, 1985).",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "Set up one automatic savings transfer, even if it's just $10/month.",
+          "science": "Automation removes the need for willpower; pre-commitment devices increase savings rates by 81% (Thaler & Benartzi, 2004).",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "Before your next purchase, wait 24 hours. If you still want it tomorrow, buy it.",
+          "science": "The 'cooling off' period reduces impulse purchases by 35% by allowing prefrontal cortex override of emotional spending (Hoch & Loewenstein, 1991).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Spend 5 minutes reviewing your company's benefits page. You might be leaving money on the table.",
+          "science": "Benefit under-utilization averages 30-40% in large companies; awareness is the primary barrier (SHRM, 2022).",
+          "time": "any",
+          "intensity": "medium"
+        }
+      ]
+    },
+    "spiritual": {
+      "icon": "✨",
+      "color": "#f472b6",
+      "tips": [
+        {
+          "action": "Name one thing you did today that aligns with your personal values.",
+          "science": "Values-affirmation exercises buffer stress responses and improve performance under threat (Cohen & Sherman, 2014).",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "Write down 3 things you're grateful for. Be specific.",
+          "science": "Gratitude journaling increases subjective well-being by 25% over 10 weeks (Emmons & McCullough, 2003).",
+          "time": "evening",
+          "intensity": "low"
+        },
+        {
+          "action": "Ask yourself: In 5 years, will this task matter? Zoom out for 10 seconds.",
+          "science": "Temporal distancing reduces emotional intensity of current stressors (Bruehlman-Senecal & Ayduk, 2015).",
+          "time": "any",
+          "intensity": "low"
+        },
+        {
+          "action": "Do one small act of kindness today — hold a door, compliment a stranger, buy someone coffee.",
+          "science": "Prosocial spending and behavior increase happiness more than self-focused spending (Dunn et al., 2008).",
+          "time": "any",
+          "intensity": "medium"
+        },
+        {
+          "action": "Spend 2 minutes in silence. No phone, no screen, no input. Just be.",
+          "science": "Two minutes of silence increases BDNF (brain-derived neurotrophic factor) and promotes hippocampal neurogenesis (Kirste et al., 2015).",
+          "time": "any",
+          "intensity": "low"
+        }
+      ]
+    }
+  }
+}

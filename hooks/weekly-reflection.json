@@ -1,0 +1,12 @@
+{
+  "name": "KeepWell Weekly Reflection",
+  "version": "1.0.0",
+  "description": "Prompts the user for a weekly wellness self-assessment across all 8 dimensions every Friday.",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Initiate a KeepWell Weekly Reflection. Ask the user to rate each of the 8 wellness dimensions (1-5) using this format:\n\nThis week's wellness check:\n🏃 Physical: How was your energy and movement?\n💭 Emotional: How was your mood stability?\n💼 Occupational: Did work feel meaningful?\n🤝 Social: Did you feel connected to others?\n📖 Intellectual: Did you learn something new?\n🌿 Environmental: Was your workspace comfortable?\n💰 Financial: Any money-related stress?\n✨ Spiritual: Did you feel aligned with your values?\n\nAfter the user responds, provide 2-3 brief observations and suggest one micro-goal for next week. Reference relevant science (SDT, JD-R model, or ART) where appropriate."
+  }
+}

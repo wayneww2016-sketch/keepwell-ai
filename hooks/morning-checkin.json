@@ -1,0 +1,12 @@
+{
+  "name": "KeepWell Morning Check-in",
+  "version": "1.0.0",
+  "description": "Starts the day with a brief intention-setting nudge based on the 8 dimensions of wellness.",
+  "when": {
+    "type": "promptSubmit"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the current system time. If this is the user's FIRST message today (morning), provide a brief KeepWell well-being nudge: one intention-setting suggestion covering Spiritual (purpose), Physical (morning movement), or Intellectual (learning goal). Keep it to 2 sentences max. Use the format: [Dimension Icon] [Suggestion] + 1-line science note. If it's not morning or the user has already been chatting, skip this entirely and do not mention it."
+  }
+}

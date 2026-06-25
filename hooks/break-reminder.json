@@ -1,0 +1,12 @@
+{
+  "name": "KeepWell Break Reminder",
+  "version": "1.0.0",
+  "description": "Reminds the user to take a break based on ultradian rhythm (90-min cycles). Triggers when the agent completes a task.",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the current system time. If the user has been working for a while (agent has completed multiple tasks in this session), provide ONE brief KeepWell well-being nudge from any of the 8 dimensions (rotate — pick a dimension not recently used). Format: [Dimension Icon] [Action in under 20 words]. Add a 1-sentence science note. Keep the total under 3 lines. If the session just started or the user seems in deep flow, skip this entirely."
+  }
+}

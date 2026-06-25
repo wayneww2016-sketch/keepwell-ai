@@ -1,0 +1,12 @@
+{
+  "name": "KeepWell Evening Wind-Down",
+  "version": "1.0.0",
+  "description": "Gently reminds the user to wrap up if working past 21:00. Based on circadian rhythm and sleep hygiene science.",
+  "when": {
+    "type": "promptSubmit"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the current system time. If it is after 21:00 (9 PM), append a brief KeepWell wind-down reminder at the END of your response (after completing the user's actual request). Use the format: '---\\n🌙 KeepWell: [gentle suggestion to wind down, referencing sleep hygiene or melatonin onset]. Keep to 1-2 sentences. If it is after 23:00, be more direct: remind them that sleep debt cannot be repaid on weekends (Walker, 2017). If it's before 21:00, do NOT add any reminder."
+  }
+}
