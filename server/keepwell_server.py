@@ -560,6 +560,30 @@ def handle_request(request):
                     "description": "Get current streak and today's nudge history.",
                     "inputSchema": {"type": "object", "properties": {}},
                 },
+                {
+                    "name": "keepwell_weather_nudge",
+                    "description": "Get a weather-aware wellness nudge. Uses Open-Meteo API (free, no key) to adapt suggestions based on temperature, rain, and UV.",
+                    "inputSchema": {
+                        "type": "object",
+                        "properties": {
+                            "latitude": {"type": "number", "description": "Latitude (default: from config)"},
+                            "longitude": {"type": "number", "description": "Longitude (default: from config)"},
+                            "language": {"type": "string", "enum": ["en", "zh-TW"]},
+                        },
+                    },
+                },
+                {
+                    "name": "keepwell_send",
+                    "description": "Send a nudge to the configured messaging channel (Slack, Telegram, Teams, or webhook).",
+                    "inputSchema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {"type": "string", "description": "Message to send"},
+                            "channel": {"type": "string", "enum": ["slack", "telegram", "teams", "webhook", "cli"], "description": "Override channel"},
+                        },
+                        "required": ["message"],
+                    },
+                },
             ]
         }
 
@@ -613,6 +637,35 @@ def handle_request(request):
                 "today_nudges": len(history.get("nudges", [])),
                 "today_checkins": len(history.get("checkins", [])),
             }
+            return {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False, indent=2)}]}
+
+        elif tool_name == "keepwell_weather_nudge":
+            from weather import get_weather, get_weather_nudge
+            config = load_config()
+            lang = arguments.get("language", config.get("profile", {}).get("language", "en"))
+            location = config.get("location", {})
+            lat = arguments.get("latitude", location.get("latitude", 25.03))
+            lon = arguments.get("longitude", location.get("longitude", 121.57))
+            weather_data = get_weather(lat, lon)
+            if weather_data.get("success"):
+                nudge = get_weather_nudge(weather_data, lang)
+                if nudge:
+                    nudge["raw_weather"] = weather_data
+                    record_nudge(nudge.get("dimension", "environmental"), nudge.get("action", ""))
+                    result = nudge
+                else:
+                    result = {"error": "Could not generate weather nudge"}
+            else:
+                result = {"error": f"Weather API unavailable: {weather_data.get('error')}"}
+            return {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False, indent=2)}]}
+
+        elif tool_name == "keepwell_send":
+            from messaging import send_message, load_messaging_config
+            msg = arguments.get("message", "")
+            msg_config = load_messaging_config()
+            if arguments.get("channel"):
+                msg_config["channel"] = arguments["channel"]
+            result = send_message(msg, msg_config)
             return {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False, indent=2)}]}
 
         else:

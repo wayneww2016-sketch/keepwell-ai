@@ -34,6 +34,7 @@ Unlike break-reminder apps that only tell you to "drink water," KeepWell AI deli
 |---------|-------------|
 | 🎯 **8 Dimensions** | Physical, Emotional, Occupational, Social, Intellectual, Environmental, Financial, Spiritual |
 | 🕐 **Time-Aware** | Adapts nudges to morning focus, afternoon dip, evening wind-down |
+| 🌤️ **Weather-Aware** | Live weather data adapts outdoor/indoor suggestions (Open-Meteo, free) |
 | 📚 **Science-Backed** | Every tip cites a specific research paper |
 | ⚙️ **Personalized** | Config system with presets for different work styles |
 | 🌙 **Shift Worker Ready** | Night shift, rotating schedules, DC operators |
@@ -41,8 +42,10 @@ Unlike break-reminder apps that only tell you to "drink water," KeepWell AI deli
 | 🔥 **Streak Tracking** | Daily engagement history with weekly reports |
 | 📊 **HTML Reports** | Visual weekly wellness dashboard |
 | 🚨 **EAP Gateway** | Auto-detects sustained low mood; suggests professional help |
-| 🔌 **MCP Server** | Works with any AI IDE (Kiro, Cursor, Claude Code) |
+| 💬 **Messaging** | Push to Slack, Telegram, Microsoft Teams, or webhook |
+| 🔌 **MCP Server** | Works with any AI IDE (Kiro, Cursor, Claude Code, Codex) |
 | 🪝 **Kiro Hooks** | Auto-triggers for morning, breaks, and evening |
+| ⏰ **Schedulable** | Cron/Task Scheduler support for push notifications |
 
 ---
 
@@ -252,11 +255,100 @@ KeepWell AI runs as an MCP (Model Context Protocol) server, making it compatible
 | Tool | Description |
 |------|-------------|
 | `keepwell_nudge` | Get a context-aware nudge (optional: dimension, language) |
+| `keepwell_weather_nudge` | Get a weather-aware nudge using live weather data |
 | `keepwell_checkin` | Record dimension scores (1-5) for tracking |
 | `keepwell_report` | Generate weekly wellness report |
+| `keepwell_send` | Push a message to Slack/Telegram/Teams/webhook |
 | `keepwell_onboarding` | Start personalized setup |
 | `keepwell_setup` | Save onboarding answers |
 | `keepwell_streak` | Get current streak and daily stats |
+
+---
+
+## Messaging Channels
+
+Push nudges to your team or yourself outside the IDE.
+
+Set `messaging.channel` in `keepwell.config.json`:
+
+| Channel | Setup | Use Case |
+|---------|-------|----------|
+| `cli` (default) | Nothing needed | Local testing |
+| `slack` | Add `slack_webhook` URL | Team well-being channel |
+| `telegram` | Add `telegram_token` + `telegram_chat_id` | Personal DM nudges |
+| `teams` | Add `teams_webhook` URL | Corporate deployment |
+| `webhook` | Add `webhook_url` | Custom integration |
+
+### Slack Setup
+
+1. Create a [Slack Incoming Webhook](https://api.slack.com/messaging/webhooks)
+2. Add the URL to your config:
+
+```json
+{
+  "messaging": {
+    "channel": "slack",
+    "slack_webhook": "https://hooks.slack.com/services/T00/B00/xxxxx"
+  }
+}
+```
+
+3. Schedule nudges:
+
+```bash
+# Cron: Every 90 min during work hours (Mon-Fri)
+*/90 9-18 * * 1-5 python3 /path/to/keepwell-ai/scripts/scheduled_nudge.py --weather
+
+# Windows Task Scheduler (PowerShell):
+# Action: python
+# Arguments: C:\path\to\keepwell-ai\scripts\scheduled_nudge.py --weather
+# Trigger: Every 90 minutes, 09:00-18:00, weekdays only
+```
+
+---
+
+## Weather-Aware Nudges
+
+Uses [Open-Meteo API](https://open-meteo.com/) (free, no API key required).
+
+Automatically adapts suggestions based on:
+- **Temperature** — outdoor vs. indoor activity
+- **Rain/Snow** — "watch the rain from the window" vs. "go for a walk"
+- **UV Index** — sunscreen warnings when UV ≥ 6
+- **Wind** — skip outdoor suggestions in strong wind
+
+```bash
+# Weather nudge (dry run)
+python scripts/scheduled_nudge.py --weather --dry-run
+
+# Example output:
+# 🌤️ Weather: 29.5°C, partly cloudy
+# 🌿 Environmental
+# It's 29.5°C outside. Perfect for a 5-min walk.
+# 📎 Why: Outdoor walking combines Attention Restoration Theory with
+#    physical movement, doubling the recovery benefit (Kaplan, 1995).
+```
+
+Configure your location in `keepwell.config.json`:
+
+```json
+{
+  "location": {
+    "latitude": 25.03,
+    "longitude": 121.57,
+    "city": "Taipei"
+  }
+}
+```
+
+Common locations:
+| City | Lat | Lon |
+|------|-----|-----|
+| Taipei | 25.03 | 121.57 |
+| Tokyo | 35.68 | 139.69 |
+| Singapore | 1.35 | 103.82 |
+| Santa Clara (NVIDIA HQ) | 37.35 | -121.95 |
+| Bangalore | 12.97 | 77.59 |
 
 ### EAP Gateway
 
@@ -359,7 +451,9 @@ KeepWell AI is designed to scale from individual to team to organization:
 | **Wellness scope** | Sleep/routine only | **8 SAMHSA dimensions** |
 | **EAP integration** | None | **Auto-detect sustained low mood** |
 | **Shift workers** | Not supported | **Night shift preset** |
-| **Protocol** | Standalone scripts + cron | **MCP Server (universal)** |
+| **Weather-aware** | Yes (morning only) | **Yes (any nudge, indoor/outdoor/UV)** |
+| **Messaging** | Slack/Telegram/iMessage | **Slack/Telegram/Teams/webhook** |
+| **Protocol** | Standalone scripts + cron | **MCP Server (universal) + cron** |
 | **Multi-language** | English only | **EN + Traditional Chinese** |
 | **Target user** | AI power users | **Any knowledge worker + enterprise** |
 | **Author expertise** | Developer/indie maker | **17-year well-being professional** |
@@ -374,31 +468,36 @@ KeepWell AI is designed to scale from individual to team to organization:
 keepwell-ai/
 ├── README.md                      # This file
 ├── SCIENCE.md                     # Theoretical framework (10 theories)
+├── CLAUDE.md                      # Claude Code integration guide
+├── AGENTS.md                      # Codex / generic agent instructions
 ├── LICENSE                        # MIT
 ├── config/
-│   ├── keepwell.config.json       # Default config (user copies this)
-│   └── presets/                   # Built-in schedule presets
+│   ├── keepwell.config.json       # Default config template
+│   └── presets/                   # Schedule presets
 │       ├── early-bird.json
 │       ├── night-owl.json
 │       ├── shift-worker-night.json
 │       └── remote-flexible.json
 ├── data/
-│   ├── wellbeing-tips.json        # 44 English tips
-│   └── wellbeing-tips-zh.json     # 44 Chinese tips
+│   ├── wellbeing-tips.json        # 44 English tips with citations
+│   └── wellbeing-tips-zh.json     # 44 Chinese tips with citations
 ├── hooks/                         # Kiro Hook definitions
 │   ├── morning-checkin.json
 │   ├── break-reminder.json
 │   ├── evening-wind-down.json
 │   └── weekly-reflection.json
 ├── server/
-│   └── keepwell_server.py         # MCP Server (universal IDE support)
+│   ├── keepwell_server.py         # MCP Server (8 tools)
+│   ├── messaging.py               # Slack/Telegram/Teams/webhook
+│   └── weather.py                 # Open-Meteo weather integration
 ├── scripts/
 │   ├── keepwell.py                # CLI tool
+│   ├── scheduled_nudge.py         # Cron/scheduler dispatcher
 │   └── generate_report.py         # HTML report generator
 ├── steering/
 │   └── keepwell.md                # Kiro Steering file
-├── history/                       # Auto-generated usage data (gitignored)
-└── reports/                       # Auto-generated HTML reports (gitignored)
+├── history/                       # Auto-generated (gitignored)
+└── reports/                       # Auto-generated (gitignored)
 ```
 
 ---

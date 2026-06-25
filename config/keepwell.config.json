@@ -24,6 +24,21 @@
     "max_nudges_per_day": 8
   },
 
+  "location": {
+    "latitude": 25.03,
+    "longitude": 121.57,
+    "city": "Taipei"
+  },
+
+  "messaging": {
+    "channel": "cli",
+    "slack_webhook": "",
+    "telegram_token": "",
+    "telegram_chat_id": "",
+    "teams_webhook": "",
+    "webhook_url": ""
+  },
+
   "shift_work": {
     "enabled": false,
     "shift_type": "day",
